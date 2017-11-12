@@ -1,3 +1,3 @@
 class Customer < ApplicationRecord
-  validates :full_name, :phone, :notes
+  validate :full_name, :phone, :email, :notes
 end
