@@ -1,8 +1,11 @@
 
-<h1>Names of all the people</h1>
-<% @customers.each do |customer| %>
-  Name: <%= customer.full_name %><br>
-        <%= customer.phone %><br>
-        <%= customer.email %><br>
-        <%= image_tag customer.image %>
-<% end %>
+<div>
+  <% @customers.each do |customer| %>
+    <div class="customer">
+      <h3>Name: <%= customer.full_name %></h3>
+      <%= image_tag customer.image, :class =>"img" %></br>
+      <p><%= customer.phone %></p>
+      <p><%= customer.email %><br></p>
+    </div>
+  <% end %>
+</div>

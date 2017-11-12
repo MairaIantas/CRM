@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # get '/customers', to 'customers', as: 'customers'
+  get '/', to: 'customers#index', as: 'index'
+  get '/alphabetized', to: 'customers#alphabetized', as: 'alphabetized'
+  get '/missing_email', to: 'customers#missing_email', as: 'missing_email'
+
+  root to: 'home#index'
+  resources :customers, only: [:show]
 end
