@@ -4,6 +4,11 @@
     <div class="customer">
       <h3>Name: <%= customer.full_name %></h3>
       <%= image_tag customer.image, :class =>"img" %></br>
+      <% if !customer.province.nil?%>
+         <p>Province: <%=customer.province.name %></p>
+       <%else%>
+          <p>Province: None</p>
+       <%end%>
       <p><%= customer.phone %></p>
       <p><%= customer.email %><br></p>
     </div>
